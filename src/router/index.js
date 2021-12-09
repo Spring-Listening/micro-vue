@@ -1,9 +1,16 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: chunwen
+ * @Date: 2021-11-01 17:50:33
+ * @LastEditors:
+ * @LastEditTime: 2021-11-13 10:56:03
+ */
 import Home from '../views/Home.vue';
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
     component: Home,
   },
@@ -15,11 +22,10 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
+  // {
+  //   path: '/',
+  //   redirect: Home,
+  // },
 ];
 
-const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
-});
-
-export default router;
+export default routes;
