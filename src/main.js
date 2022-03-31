@@ -4,7 +4,7 @@
  * @Author: chunwen
  * @Date: 2021-11-01 17:50:33
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-30 15:46:24
+ * @LastEditTime: 2022-03-31 10:12:28
  */
 import './public-path';
 import { createApp } from 'vue';
@@ -42,7 +42,7 @@ async function render(props = {}) {
     router.afterEach((to) => {
       console.log('micro_vue', to);
       const { meta, name, href } = to;
-      props.store.dispatch('menuList/invokeMicroRoute', {
+      props.mainStore.dispatch('menuList/invokeMicroRoute', {
         path: href,
         name,
         meta,
@@ -53,7 +53,6 @@ async function render(props = {}) {
 
 // eslint-disable-next-line no-underscore-dangle
 if (!window.__POWERED_BY_QIANKUN__) {
-  console.log('执行到了 micro_vue 0000000000000');
   render({ container: '', routerBase: '/' });
 }
 
